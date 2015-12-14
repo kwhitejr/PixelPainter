@@ -1,0 +1,18 @@
+.container,
+.swatch,
+.grid,
+.cell {
+  border: 1px solid black;
+}
+
+.swatch {
+  display: block;
+  height: 25px;
+  width: 25px;
+}
+
+.cell {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+}
