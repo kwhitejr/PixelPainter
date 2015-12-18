@@ -2,8 +2,9 @@ $(init);
 
 function init() {
   drawSwatches(3, 3);
+  buttonCreator();
   drawCanvas(10, 10);
-  mouseChecker();
+  // mouseChecker();
 }
 
 var pixelPainterContainer = $('#pixelPainter'); // $ = document.getElementById
@@ -53,6 +54,48 @@ function drawSwatches(x, y) {
   }
   // Append swatch to pixel painter container
   pixelPainterContainer.append(swatchContainer);
+}
+
+function buttonCreator() {
+  var eraseAllButton = $('<button />');
+  eraseAllButton.attr('type','button');
+  eraseAllButton.attr('class','button');
+  eraseAllButton.attr('id','eraseall');
+  eraseAllButton.text('Erase All');
+  eraseAllButton.on('click', eraseAll);
+
+  // $('#eraseall').on('click', eraseAll);
+  var eraseCellButton = '<button type="button" class="button" id="erasecell">Erase</button>';
+  $('#erasecell').click(erase);
+  var undoButton = '<button type="button" class="button" id="undo">undo</button>';
+  $('#undo').click(undo);
+  var redoButton = '<button type="button" class="button" id="redo">redo</button>';
+  $('#redo').click(redo);
+  var saveButton = '<button type="button" class="button" id="save">Save</button>';
+  $('#save').click(save);
+
+  pixelPainterContainer.append(eraseAllButton, eraseCellButton, undoButton, redoButton, saveButton);
+}
+
+function eraseAll() {
+  console.log('Wow, you erased all the things!');
+  $('.cell').css('background-color', 'white');
+}
+
+function erase() {
+  console.log('Wow, you erased it!');
+}
+
+function undo() {
+  console.log('Wow, you undid!');
+}
+
+function redo() {
+  console.log('Wow, you redid!');
+}
+
+function save() {
+  console.log('Wow, you saved!');
 }
 
 // highlights the currently selected color
