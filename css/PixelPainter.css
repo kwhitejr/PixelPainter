@@ -1,6 +1,6 @@
 .swatch,
 .grid,
-.cell {
+.canvasCell {
   border: 1px solid black;
 }
 
@@ -10,16 +10,17 @@
   width: 25px;
 }
 
-.cell {
+.canvasCell {
   display: inline-block;
   height: 50px;
   width: 50px;
 }
 
-#selected {
+#selected,
+.button:hover {
   border: 1px solid rgba(81, 203, 238, 1);
 }
 
-.button:hover {
-    border: 1px solid rgba(81, 203, 238, 1);
+#erasecell:active {
+  border: 2px solid red;
 }
