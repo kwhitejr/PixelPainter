@@ -10,6 +10,14 @@
   width: 25px;
 }
 
+#swatch {
+  float: left;
+}
+
+#canvas {
+  float: right;
+}
+
 .cell {
   display: inline-block;
   height: 50px;
